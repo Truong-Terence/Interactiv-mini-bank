@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public class Customer {
 
-    String name;
+    private String name;
     int nbAccount;
     Account[] accounts = new Account[100];
 

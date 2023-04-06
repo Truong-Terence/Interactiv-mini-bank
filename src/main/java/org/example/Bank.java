@@ -7,20 +7,25 @@ public class Bank {
     String name;
     int nbCustomer;
 
-    public Bank() {
-        nbCustomer = 0;
+    public Bank(String name) {
+        this.name = name;
+        this.nbCustomer = 0;
     }
     void addCustomer(String costumerName) {
-        nbCustomer++;
         this.customers[nbCustomer] = new Customer(costumerName);
+        this.nbCustomer++;
     }
 
-    void customerBalanceSheet(String costumerName) {
-
+    Customer getCustomerByIndex(int index) {
+        return this.customers[index];
     }
 
     void displayBalanceSheet() {
-
+        for (Customer customer : customers) {
+            if (customer == null) {
+                break;
+            }
+            System.out.println("Customer :" + customer.getName() + " --> " + customer.getBalance());
+        }
     }
-
 }

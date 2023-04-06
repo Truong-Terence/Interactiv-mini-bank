@@ -9,7 +9,10 @@ public class Test {
 //        System.out.println(testCostumerFirstAccounts());
 //        testAddAccount();
 //        testGetBalance();
-        testTransfer();
+//        testTransfer();
+//        System.out.println(testCustomerBalanceSheet());
+        testDisplayBalanceSheet();
+
     }
     public static float testDisplayBalance() {
         Account account = new Account(UUID.randomUUID().toString(),2.0f);
@@ -46,5 +49,21 @@ public class Test {
         newCustomer.accounts[0].transfer((float) 20, newCustomer.accounts[1]);
         System.out.println(newCustomer.accounts[0].balance);
         System.out.println(newCustomer.accounts[1].balance);
+    }
+
+    public static float testCustomerBalanceSheet() {
+        Bank newBank = new Bank("New");
+        newBank.addCustomer("Tété");
+        newBank.getCustomerByIndex(0).addAccount(100.0f);
+        return newBank.getCustomerByIndex(0).getBalance();
+    }
+
+    public static void testDisplayBalanceSheet() {
+        Bank newBank = new Bank("New");
+        newBank.addCustomer("Tété");
+        newBank.getCustomerByIndex(0).addAccount(100.0f);
+        newBank.addCustomer("TT");
+        newBank.getCustomerByIndex(1).addAccount(1000.0f);
+        newBank.displayBalanceSheet();
     }
 }
