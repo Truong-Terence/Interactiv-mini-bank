@@ -1,11 +1,11 @@
 
 package org.example;
 public class Account {
-    short number;
-    double balance;
+    String accountId;
+    float balance;
 
-    public Account(short number, double balance) {
-        this.number = number;
+    public Account(String accountId, float balance) {
+        this.accountId = accountId;
         this.balance = balance;
     }
     void deposit(float value) {
@@ -23,9 +23,10 @@ public class Account {
         System.out.println(getBalance());
     }
 
-//    void transfer(float value, Account recipient) {
-//
-//    }
+    void transfer(float value, Account recipient) {
+        this.balance -= value;
+        recipient.balance += value;
+    }
 }
 
 
