@@ -32,4 +32,7 @@ public class Customer {
         System.out.println(this.getBalance());
     }
 
+    public Account[] getAccounts() {
+        return accounts;
+    }
 }

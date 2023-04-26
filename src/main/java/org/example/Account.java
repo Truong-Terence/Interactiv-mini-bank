@@ -27,6 +27,10 @@ public class Account {
         this.balance -= value;
         recipient.balance += value;
     }
+
+    public String getAccountId() {
+        return accountId;
+    }
 }
 
 

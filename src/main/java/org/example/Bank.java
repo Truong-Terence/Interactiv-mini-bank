@@ -28,4 +28,8 @@ public class Bank {
             System.out.println("Customer :" + customer.getName() + " --> " + customer.getBalance());
         }
     }
+
+    public Customer[] getCustomer() {
+        return customers;
+    }
 }
